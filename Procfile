@@ -1,1 +1,1 @@
-web: gunicorn resume_django.resume_django.wsgi
+web: gunicorn resume_django.wsgi
