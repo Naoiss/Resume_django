@@ -1,0 +1,1 @@
+web: gunicorn resume_django.resume_django.wsgi
