@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False')
 
-ALLOWED_HOSTS = os.environ.list('ALLOWED_HOSTS')
+ALLOWED_HOSTS = ['.herokuapp.com', '.bugra.codes','127.0.0.1']
 
 EMAIL_HOST = 'smtp-mail.outlook.com'
 EMAIL_HOST_USER = 'resume_mes_bugra@outlook.com'
