@@ -15,7 +15,7 @@ class Skill(models.Model):
 
     name = models.CharField(max_length=20, blank=True, null=True)
     score = models.IntegerField(default=80, blank=True, null=True)
-    image = models.FileField(blank=True, null=True, upload_to="skills")
+    image = models.FileField(blank=True, null=True, upload_to="static.images")
     is_key_skill = models.BooleanField(default=False)
 
     def __str__(self):
@@ -75,7 +75,7 @@ class Media(models.Model):
         verbose_name = 'Media'
         ordering = ["name"]
 
-    image = models.ImageField(blank=True, null=True, upload_to="media")
+    image = models.ImageField(blank=True, null=True, upload_to="static.media")
     url = models.URLField(blank=True, null=True)
     name = models.CharField(max_length=200, blank=True, null=True)
     is_image = models.BooleanField(default=True)
