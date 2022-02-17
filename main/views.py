@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.core.mail import send_mail
+from django.conf import  settings
 from django.contrib import messages
 from .models import (
     UserProfile,
@@ -38,6 +40,11 @@ class ContactView(generic.FormView):
 
     def form_valid(self, form):
         form.save()
+        send_mail('Bugra.codes Contact Form',
+                  form.name + ' ' + form.email + ' ' + form.message,
+                  settings.EMAIL_HOST_USER,
+                  ['bugrayldrm@gmail.com'],
+                  fail_silently=False)
         messages.success(self.request, 'Thank you. We will be in touch soon.')
         return super().form_valid(form)
 
