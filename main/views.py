@@ -39,12 +39,13 @@ class ContactView(generic.FormView):
     success_url = "/"
 
     def form_valid(self, form):
-        form.save()
+        #form.save()
         send_mail('Bugra.codes Contact Form',
-                  form.name + ' ' + form.email + ' ' + form.message,
+                  form,
                   settings.EMAIL_HOST_USER,
                   ['bugrayldrm@gmail.com'],
                   fail_silently=False)
+        form.save()
         messages.success(self.request, 'Thank you. We will be in touch soon.')
         return super().form_valid(form)
 
