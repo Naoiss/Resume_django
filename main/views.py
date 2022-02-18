@@ -40,7 +40,7 @@ class ContactView(generic.FormView):
 
     def form_valid(self, form):
         #form.save()
-        string message12 = form.clean('name') + form.clean('email') + form.clean('message')
+        message12 = form.clean('name') + form.clean('email') + form.clean('message')
         send_mail('Bugra.codes Contact Form',
                   message12,
                   settings.EMAIL_HOST_USER,
