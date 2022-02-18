@@ -40,8 +40,9 @@ class ContactView(generic.FormView):
 
     def form_valid(self, form):
         #form.save()
+        string message12 = form.name + form.email + form.message
         send_mail('Bugra.codes Contact Form',
-                  form,
+                  message12,
                   settings.EMAIL_HOST_USER,
                   ['bugrayldrm@gmail.com'],
                   fail_silently=False)
