@@ -41,7 +41,7 @@ class ContactView(generic.FormView):
     def form_valid(self, form):
         form.save()
         body = form.save()
-        message12 = body.name + body.email + body.message
+        message12 = body.name + '\n' + body.email + '\n' + body.message
         send_mail('Bugra.codes Contact Form',
                   message12,
                   settings.EMAIL_HOST_USER,
