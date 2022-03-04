@@ -47,7 +47,7 @@ Start Content
             <div class="bannerBtnCol">
               <div class="row">
                 <div class="col-auto">
-                  <a download href="{% static 'media/Bugra_resume.pdf'%}" class="btn btnPrimary">Download Resume</a>
+                  <a download href="{% static 'media/Bugra_resume.pdf' %}" class="btn btnPrimary">Download Resume</a>
                 </div>
                 <div class="col-auto">
                   <a href="{% url 'main:contact' %}" class="btn btnOutline">Contact</a>
@@ -68,18 +68,30 @@ Start Content
         <div class="col-md-auto">
           <div class="keySkillCol">
             <h4 class="smTitle pb-3">Key Skills</h4>
-            {% for sk in me.userprofile.skills.all %}
-            {% if sk.is_key_skill %}
             <div class="keySkillCard">
-              {% if sk.image %}
               <div class="ksIconCol">
-                <img src="{{sk.image.url}}" alt="...">
+                <img src="{{ static 'images/icons8-django.svg' }}" alt="...">
               </div>
-              {% endif %}
-              <span class="ksText">{{sk.name}}</span>
+              <span class="ksText">Django</span>
             </div>
-            {% endif %}
-            {% endfor %}
+            <div class="keySkillCard">
+              <div class="ksIconCol">
+                <img src="{{ static 'images/icons8-python.svg' }}" alt="...">
+              </div>
+              <span class="ksText">Python</span>
+            </div>
+            <div class="keySkillCard">
+              <div class="ksIconCol">
+                <img src="{{ static 'images/icons8-react.svg' }}" alt="...">
+              </div>
+              <span class="ksText">React</span>
+            </div>
+            <div class="keySkillCard">
+              <div class="ksIconCol">
+                <img src="{{ static 'images/icons8-unity.svg' }}" alt="...">
+              </div>
+              <span class="ksText">Unity</span>
+            </div>
           </div>
         </div>
         <div class="col-md">
